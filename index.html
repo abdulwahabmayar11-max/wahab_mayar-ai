@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مایار بوت - Mayar Bot</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background-color: #121212; color: #ffffff; padding: 20px; text-align: center; }
+        .chat-container { max-width: 500px; margin: auto; background: #1e1e1e; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #bb86fc; }
+        h2 { color: #bb86fc; font-size: 24px; }
+        input { width: 85%; padding: 12px; border: 1px solid #333; border-radius: 8px; background: #2d2d2d; color: #fff; text-align: right; font-size: 16px; }
+        input:focus { border-color: #bb86fc; outline: none; }
+        button { margin-top: 15px; padding: 12px 25px; background: #bb86fc; color: #121212; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; width: 90%; }
+        button:hover { background: #9a66d4; }
+        #response { margin-top: 25px; padding: 15px; background: #2d2d2d; border-radius: 8px; text-align: right; line-height: 1.6; border-right: 4px solid #bb86fc; min-height: 50px; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>🤖 مایار بوت (Mayar Bot)</h2>
+    <p style="color: #aaa; font-size: 14px;">پاسخ‌گوی سوالات شما</p>
+    <input type="text" id="userInput" placeholder="سوال خود را از مایار بوت بپرسید...">
+    <button onclick="askMayarBot()">ارسال سوال</button>
+    <div id="response">منتظر سوال شما هستم...</div>
+</div>
+
+<script>
+async function askMayarBot() {
+    const question = document.getElementById('userInput').value;
+    const responseDiv = document.getElementById('response');
+    
+    if (!question.trim()) {
+        responseDiv.innerText = "لطفاً ابتدا یک سوال بنویسید!";
+        return;
+    }
+
+    responseDiv.innerText = "در حال پردازش پاسخ توسط مایار بوت...";
+
+    // شبیه‌سازی اتصال به هوش مصنوعی با شرط درخواستی شما
+    setTimeout(() => {
+        const intro = "به اجازه عبدالوهاب مایار؛\n\n";
+        const aiAnswer = "من مایار بوت هستم. کد شما با موفقیت آپدیت شد و آماده اتصال به مغز اصلی هوش مصنوعی است. شما پرسیدید: " + question;
+        
+        responseDiv.innerText = intro + aiAnswer;
+    }, 1500);
+}
+</script>
+
+</body>
+</html>
+
